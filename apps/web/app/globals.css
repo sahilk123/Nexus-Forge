@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-surface text-slate-900;
+}
+
+/* Radix UI - Accessibility Focus Styles */
+[data-radix-dialog-overlay] {
+  @apply bg-black/50 backdrop-blur-xs;
+}
+
+[data-radix-dialog-content] {
+  @apply rounded-lg shadow-lg;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Smooth transitions */
+button,
+[role='button'],
+[role='menuitem'],
+[role='tab'] {
+  @apply transition-colors duration-200;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    @apply !transition-none !animate-none;
+  }
+}
